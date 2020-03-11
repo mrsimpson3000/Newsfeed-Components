@@ -112,6 +112,8 @@ const data = [
     const articleParagragh3 = document.createElement('p');
     const arctileExpandButton = document.createElement('span');
 
+    article.append(articleTitle, articleDate, articleParagragh1, articleParagragh2, articleParagragh3, arctileExpandButton);
+
     return article;
   }
 
