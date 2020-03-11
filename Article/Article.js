@@ -104,6 +104,7 @@ const data = [
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above. */
 
   function articleCreator(data) {
+    // Creating the elements
     const article = document.createElement('div');
     const articleTitle = document.createElement('h2');
     const articleDate = document.createElement('p');
@@ -112,16 +113,36 @@ const data = [
     const articleParagragh3 = document.createElement('p');
     const arctileExpandButton = document.createElement('span');
 
+    // Creating the HTML structure using .append
     article.append(articleTitle, articleDate, articleParagragh1, articleParagragh2, articleParagragh3, arctileExpandButton);
+
+    // Adding the proper classes
+    article.classList.add('article');
+    articleDate.classList.add('date');
+    arctileExpandButton.classList.add('expandButton');
+
+    // Adding the proper text to the element
+    articleTitle.textContent = data.title;
+    articleDate.textContent = data.date;
+    articleParagragh1.textContent = data.firstParagraph;
+    articleParagragh2.textContent = data.secondParagraph;
+    articleParagragh3.textContent = data.thirdParagraph;
+
+    // Adding event listener
+    articleExpandButton.addEventListener('click', event => {
+      article.classList.toggle('article-open');
+    })
 
     return article;
   }
 
   /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
+  Step 3: return the entire component. */
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  
+
+  /* Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
