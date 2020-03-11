@@ -111,15 +111,15 @@ const data = [
     const articleParagragh1 = document.createElement('p');
     const articleParagragh2 = document.createElement('p');
     const articleParagragh3 = document.createElement('p');
-    const arctileExpandButton = document.createElement('span');
+    const articleExpandButton = document.createElement('span');
 
     // Creating the HTML structure using .append
-    article.append(articleTitle, articleDate, articleParagragh1, articleParagragh2, articleParagragh3, arctileExpandButton);
+    article.append(articleTitle, articleDate, articleParagragh1, articleParagragh2, articleParagragh3, articleExpandButton);
 
     // Adding the proper classes
     article.classList.add('article');
     articleDate.classList.add('date');
-    arctileExpandButton.classList.add('expandButton');
+    articleExpandButton.classList.add('expandButton');
 
     // Adding the proper text to the element
     articleTitle.textContent = data.title;
@@ -127,6 +127,7 @@ const data = [
     articleParagragh1.textContent = data.firstParagraph;
     articleParagragh2.textContent = data.secondParagraph;
     articleParagragh3.textContent = data.thirdParagraph;
+    articleExpandButton.textContent = "expand";
 
     // Adding event listener
     articleExpandButton.addEventListener('click', event => {
@@ -140,7 +141,10 @@ const data = [
 
   Step 3: return the entire component. */
 
-  
+  const newData = data.map( data => {
+    const articles = document.querySelector('.articles').append(articleCreator(data));
+    return articles;
+  })
 
   /* Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
