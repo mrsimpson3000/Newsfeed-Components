@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -85,6 +84,33 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Why am I here?',
+    date: 'March 3, 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam mollitia eius obcaecati tenetur dolores possimus libero! Autem blanditiis molestias dignissimos neque suscipit incidunt, voluptatum alias animi nostrum tempora atque ipsam cum, fuga deleniti quo illum! Ut labore aliquam maxime nesciunt quae officiis possimus non fugiat quisquam quas, quidem, odit commodi?`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos modi quos porro mollitia eveniet placeat adipisci eaque asperiores beatae. Porro modi expedita placeat fugiat cumque nisi veniam doloremque dicta ex fugit, molestiae accusamus quia consectetur? Iste, veritatis laborum vitae odio eum placeat, perspiciatis provident magnam repudiandae aliquam, et ipsum commodi?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit laboriosam, laborum ullam est quas odio excepturi aspernatur expedita explicabo voluptas incidunt! Harum ex ipsam porro dolores nesciunt incidunt facere natus fugiat earum numquam cum eveniet accusamus odio corrupti atque, et aspernatur animi error repellat laudantium. Laboriosam eos dolores obcaecati reprehenderit.`
+  },
+  {
+    title: "I don't know",
+    date: 'March 3, 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dolor iste quod, quidem iure error repellendus sed. Quo cupiditate quidem voluptates accusamus sequi placeat voluptatibus enim, dicta pariatur ducimus magnam modi deleniti qui iure molestiae at veritatis commodi excepturi laboriosam autem vero culpa? Omnis quam eveniet non minus voluptates ut.`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi explicabo eum, perspiciatis saepe, omnis asperiores culpa rem aperiam molestiae sunt, velit at similique architecto! Perspiciatis, ipsum minus? Sint veniam, quas ut fuga debitis temporibus illum earum, libero nam porro voluptate laborum dolorum ea a vitae voluptates dolorem possimus praesentium dolores?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptate blanditiis veniam doloremque, deserunt, minus ut ipsum veritatis distinctio sint laudantium temporibus quia quod cum dignissimos tempore corporis at sunt eius delectus qui a minima quam. Aut officiis cupiditate impedit voluptas quaerat quos? Quisquam, quibusdam laborum! Reiciendis recusandae unde explicabo?`
+  },
+  {
+    title: 'Quit asking so many questions',
+    date: 'March 3, 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ab nemo unde accusamus quae voluptatibus ducimus quidem optio modi. Eligendi odit porro laborum aut autem fugiat quis odio saepe doloremque ex quos omnis nesciunt, inventore aspernatur esse modi magnam voluptatibus enim ducimus adipisci at laboriosam. Illum, voluptatibus omnis? Alias, tempora.`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque modi facilis rem repudiandae quod, quasi quis non laudantium, accusamus commodi, suscipit atque eum? Adipisci vitae omnis doloribus repudiandae, dicta quibusdam possimus voluptas necessitatibus voluptatum, ea et natus eaque id minus doloremque nobis at. Temporibus similique aut, hic voluptates officia alias.`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, repellat deserunt fuga quaerat obcaecati, natus repudiandae error nobis assumenda explicabo eius ea, molestias exercitationem ratione eaque tempora officia quae ipsam fugiat nihil consequuntur quisquam. Officia, quam! Culpa, porro nulla, rerum blanditiis aspernatur tenetur modi repellendus quia numquam id veritatis eius.`
   }
 ];
 
@@ -103,50 +129,50 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above. */
 
-  function articleCreator(data) {
-    // Creating the elements
-    const article = document.createElement('div');
-    const articleTitle = document.createElement('h2');
-    const articleDate = document.createElement('p');
-    const articleParagragh1 = document.createElement('p');
-    const articleParagragh2 = document.createElement('p');
-    const articleParagragh3 = document.createElement('p');
-    const articleExpandButton = document.createElement('span');
+function articleCreator(data) {
+  // Creating the elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleParagragh1 = document.createElement('p');
+  const articleParagragh2 = document.createElement('p');
+  const articleParagragh3 = document.createElement('p');
+  const articleExpandButton = document.createElement('span');
 
-    // Creating the HTML structure using .append
-    article.append(articleTitle, articleDate, articleParagragh1, articleParagragh2, articleParagragh3, articleExpandButton);
+  // Creating the HTML structure using .append
+  article.append(articleTitle, articleDate, articleParagragh1, articleParagragh2, articleParagragh3, articleExpandButton);
 
-    // Adding the proper classes
-    article.classList.add('article');
-    articleDate.classList.add('date');
-    articleExpandButton.classList.add('expandButton');
+  // Adding the proper classes
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleExpandButton.classList.add('expandButton');
 
-    // Adding the proper text to the element
-    articleTitle.textContent = data.title;
-    articleDate.textContent = data.date;
-    articleParagragh1.textContent = data.firstParagraph;
-    articleParagragh2.textContent = data.secondParagraph;
-    articleParagragh3.textContent = data.thirdParagraph;
-    articleExpandButton.textContent = "expand";
+  // Adding the proper text to the element
+  articleTitle.textContent = data.title;
+  articleDate.textContent = data.date;
+  articleParagragh1.textContent = data.firstParagraph;
+  articleParagragh2.textContent = data.secondParagraph;
+  articleParagragh3.textContent = data.thirdParagraph;
+  articleExpandButton.textContent = "expand";
 
-    // Adding event listener
-    articleExpandButton.addEventListener('click', event => {
-      article.classList.toggle('article-open');
-    })
-
-    return article;
-  }
-
-  /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component. */
-
-  const newData = data.map( data => {
-    const articles = document.querySelector('.articles').append(articleCreator(data));
-    return articles;
+  // Adding event listener
+  articleExpandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open');
   })
 
-  /* Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  return article;
+}
+
+/* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+Step 3: return the entire component. */
+
+const newData = data.map(data => {
+  const articles = document.querySelector('.articles').append(articleCreator(data));
+  return articles;
+})
+
+/* Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
